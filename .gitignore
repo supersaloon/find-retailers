@@ -1,0 +1,8 @@
+env/
+.env/
+files/
+.cache/
+.vscode/
+.streamlit/*
+.memo.md
+memo.md
