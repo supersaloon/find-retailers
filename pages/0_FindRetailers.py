@@ -22,6 +22,9 @@ from utils import show, show_in_chain
 
 thread_id = st.session_state["thread_id"]
 
+if st.session_state.get("chat_messages") is None:
+    st.session_state["chat_messages"] = []
+
 st.set_page_config(
     page_title="FindRetailer",
     page_icon="🛒",
