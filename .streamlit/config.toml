@@ -1,0 +1,11 @@
+[theme]
+primaryColor = "#F7E600"  # 카카오톡의 대표적인 노란색, 메인 테마 색상으로 사용한다.
+backgroundColor = "#E5E5E5"  # 밝은 회색, 배경색으로 좋다.
+secondaryBackgroundColor = "#EAEAEA"  # 조금 더 어두운 회색, 사이드바 같은 데 쓰면 된다.
+textColor = "#000000"  # 검정색, 글씨 색상으로 적합하다.
+font = "sans serif"  # 글꼴은 간결한 산세리프체가 좋다.
+
+
+# Automatically rerun script when the file is modified on disk.
+# Default: false
+runOnSave = true
