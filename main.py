@@ -1,6 +1,6 @@
 import streamlit as st
 
-from utils import get_current_time_korea_formatted
+from utils import generate_random_string
 
 st.set_page_config(
     page_title="Find Retailers",
@@ -21,7 +21,7 @@ if st.button("확인"):
     if (activation_key == correct_key):
         st.session_state['access_granted'] = True
         st.success("FindUs 페이지로 이동하셔서 인재를 검색해 보세요!")
-        st.session_state['thread_id'] = get_current_time_korea_formatted()
+        st.session_state['thread_id'] = generate_random_string()
     else:
         st.session_state['access_granted'] = False
         if activation_key != correct_key:
