@@ -119,6 +119,10 @@ def save_message(message, role):
     st.session_state["chat_messages"].append({"chat_messages": message, "role": role})
 
 
+def clear_messages():
+    st.session_state["chat_messages"] = []
+
+
 def send_message(message, role, save=True):
     with st.chat_message(role):
         st.markdown(message)
@@ -263,6 +267,9 @@ if preset_button1_clicked:
 preset_button2_clicked = st.button(preset_message2)
 if preset_button2_clicked:
     on_button_click(preset_message2)
+clear_button_clicked = st.button("채팅 지우기")
+if clear_button_clicked:
+    clear_messages()
 
 send_message(
     "경험과 노하우가 풍부한 인재를 찾고 계신가요?\n\nFind Retailers와의 대화를 통해 인재를 찾을 수 있습니다.\n\n 위의 예시를 통해 시작해 보시거나 직접 채팅창에 입력하여 인재를 찾아보세요 😉",
@@ -272,6 +279,21 @@ send_message(
 paint_history()
 
 message = st.chat_input("어떤 인재를 찾고 계신가요?")
+
+# # st.columns를 사용하여 레이아웃을 두 개의 열로 분할합니다.
+# col1, col2 = st.columns([10, 1])  # 비율을 조정하여 입력 필드와 버튼의 너비를 조절할 수 있습니다.
+
+# # 첫 번째 열에 입력 필드 추가
+# with col1:
+#     message = st.text_input("어떤 인재를 찾고 계신가요?")
+
+# # 두 번째 열에 버튼 추가
+# with col2:
+#     clicked = st.button("버튼")
+
+# # 버튼 클릭 시 행동 정의
+# if clicked:
+#     st.write(f"입력된 메시지: {message}")
 
 if (st.session_state.project_button_clicked and st.session_state.project_preset_answered == False):
     send_message(st.session_state.project_preset_message, "human")
