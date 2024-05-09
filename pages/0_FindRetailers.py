@@ -106,7 +106,7 @@ profile_azure_vector_store: AzureSearch = AzureSearch(
     ),
 )
 
-profile_azure_retriever = profile_azure_vector_store.as_retriever(search_kwargs={"k": 5})
+profile_azure_retriever = profile_azure_vector_store.as_retriever(search_kwargs={"k": 7})
 
 
 def profile_vector_search(input):
@@ -279,21 +279,6 @@ send_message(
 paint_history()
 
 message = st.chat_input("어떤 인재를 찾고 계신가요?")
-
-# # st.columns를 사용하여 레이아웃을 두 개의 열로 분할합니다.
-# col1, col2 = st.columns([10, 1])  # 비율을 조정하여 입력 필드와 버튼의 너비를 조절할 수 있습니다.
-
-# # 첫 번째 열에 입력 필드 추가
-# with col1:
-#     message = st.text_input("어떤 인재를 찾고 계신가요?")
-
-# # 두 번째 열에 버튼 추가
-# with col2:
-#     clicked = st.button("버튼")
-
-# # 버튼 클릭 시 행동 정의
-# if clicked:
-#     st.write(f"입력된 메시지: {message}")
 
 if (st.session_state.project_button_clicked and st.session_state.project_preset_answered == False):
     send_message(st.session_state.project_preset_message, "human")
